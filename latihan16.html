@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password</title>
+</head>
+<body>
+    <div style="margin-bottom: 10px;">
+        <input type="text" name = "" id="txt_password">
+    </div>
+
+    <div style="margin-bottom: 10px;">
+        <input type="text" name = "" id="txt_repassword">
+    </div>
+
+    <div>
+        <button id="btn_login">Login</button>
+    </div>
+    
+    <script>
+        let txt_password, txt_repassword;
+        let btn_login;
+        let jumlah_input;
+
+        txt_password = document.querySelector("#txt_password");
+        txt_repassword = document.querySelector("#txt_repassword");
+        btn_login = document.querySelector("#btn_login");
+        //non aktifkan "btn_login"
+        btn_login.disabled = true;
+
+        //buat arrow function
+        const checkPasswordRepassword = (
+            password,
+            repassword,
+            count_password,
+            count_repassword,
+            login
+            ) => {
+            //hitung jumlah karakter password & repassword
+            count_password = password.value.length;
+            count_repassword = repassword.value.length;
+            //jika jumlah karakter password >= 1 
+            //dan jumlah karakter repassword >= 1
+            if(count_password >= 1 && count_repassword >= 1){
+            if (password.value == repassword.value)
+            {
+                login.disabled = false;
+            }
+            //jika jumlah karakter password < 1 
+            //dan jumlah karakter repassword < 1
+            else
+            {
+                login.disabled = true;
+            }}
+        };
+
+        let jml_password, jml_repassword;
+
+        txt_password.addEventListener("keyup", function() {
+            checkPasswordRepassword(txt_password, this, jml_repassword, jml_repassword,
+            btn_login);
+        });
+            txt_password.addEventListener("keyup", function() {
+            checkPasswordRepassword(this, txt_repassword, jml_repassword, jml_repassword,
+            btn_login);
+        });
+    </script>
+
+</body>
+</html>

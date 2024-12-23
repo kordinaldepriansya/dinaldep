@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Events (Ternary Operator)</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      name=""
+      id="txt_nilai1"
+      placeholder="Isi Nilai 1"
+      maxlength="5"
+    />
+    <input
+      type="text"
+      name=""
+      id="txt_nilai2"
+      placeholder="Isi Nilai 2"
+      maxlength="5"
+    />
+    <select name="" id="cbo_operasi">
+      <option value="">Pilih Jenis Operasi</option>
+      <option value="penjumlahan">penjumlahan</option>
+      <option value="pengurangan">pengurangan</option>
+      <option value="perkalian">perkalian</option>
+    </select>
+    <input
+      type="text"
+      name=""
+      id="txt_hasil"
+      placeholder="Hasil Perhitungan"
+      readonly
+    />
+    <button id="btn_hitung">Hitung</button>
+
+    <!-- internal JS -->
+    <script>
+      // buat variabel
+      let nilai1, nilai2, operasi, proses, hasil;
+      //definisikan variabel
+      nilai1 = document.querySelector("#txt_nilai1");
+      nilai2 = document.querySelector("#txt_nilai2");
+      operasi = document.querySelector("#cbo_operasi");
+      hasil = document.querySelector("#txt_hasil");
+
+      //buat event untuk "btn_hitung"
+      document
+        .querySelector("#btn_hitung")
+        .addEventListener("click", setHitung);
+
+        //buat event untuk "cbo_operasi"
+        document.querySelector ("#cbo_operasi").addEventListener("change", setHitung);
+
+      //buat function "setHitung"
+      function setHitung() {
+        //alert(operasi.options[operasi.selectedIndex].text)
+        // alert(operasi.value)
+        // alert("Tombol Di Kik")
+        //proses = parseInt(nilai1.value) + parseInt(nilai2.value);
+        //tampilkan outputnya
+        // hasil.value = proses;
+        // buat ternary operation
+        const pilihan =
+          operasi.value == "penjumlahan"
+            ? (proses = parseInt(nilai1.value) + parseInt(nilai2.value))
+            : operasi.value == "pengurangan"
+            ? (proses = parseInt(nilai1.value) - parseInt(nilai2.value))
+            : operasi.value == "perkalian"
+            ? (proses = parseInt(nilai1.value) * parseInt(nilai2.value))
+            : (proses = 0);
+
+        //tampilkan output
+        hasil.value = proses;
+      }
+    </script>
+  </body>
+</html>

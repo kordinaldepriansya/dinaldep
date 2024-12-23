@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>percabangan</title>
+</head>
+<body>
+    <script>
+        let nilai;
+        let huruf= "";
+        let hasil="";
+        nilai=150;
+        if(nilai >= 90 && nilai <= 100) {
+            huruf = "A";
+            hasil = "LULUS";
+        }
+        //jika nilai 80 - 89 
+        else if (nilai >= 80 && nilai <= 89) {
+            huruf = "B";
+            hasil = "LULUS";
+        }
+        else if(nilai >= 70 && nilai <= 79) {
+            huruf = "C";
+            hasil = "LULUS";
+        }
+        else if(nilai >= 60 && nilai <= 69)
+        {
+            huruf = "D";
+            hasil = "TIDAK LULUS";
+        }
+        else if (nilai >= 0 && nilai <= 59) {
+            huruf = "E";
+            hasil = "TIDAK LULUS";
+        }
+        {
+            huruf = "";
+            hasil = "TIDAK TERHINGGA";
+        }
+        document .write(`Nilai : ${nilai}<br>Huruf : ${huruf}<br>Hasil : ${hasil}`);
+    </script>
+</body>
+</html>

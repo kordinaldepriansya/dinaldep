@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model (DOM)</title>
+</head>
+<body>
+    <!--buat elemen/object button   -->
+    <button id="btn_start">Start</button>
+    <button id="btn_stop">Stop</button>
+
+    <!-- internal js -->
+     <script>
+        //buat kode untuk click button 
+        //1. metode"TAG"
+        // document.querySelectorAll("button")[0].innerHTML = "Mulai"
+        // document.querySelectorAll("button")[1].innerHTML = "Selesai"
+        
+        //2. metode id
+        document.querySelector("#btn_start").innerHTML = "Mulai";
+        document.querySelector("#btn_stop").innerHTML = "Selesai";
+
+</script>
+</body>
+</html>

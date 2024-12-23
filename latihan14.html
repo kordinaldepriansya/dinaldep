@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function (Internal)</title>
+  </head>
+  <body>
+    <!-- buat text -->
+    <div style="margin-bottom: 10px;">
+      <input type="text" name="" id="txt_input1" />
+      <label for="lbl_input1">0</label>
+    </div>
+
+    <div>
+      <input type="text" name="" id="txt_input2" />
+    </div>
+
+    <!-- internal js -->
+     <script>
+        // buat variabel
+        let txt_input1, txt_input2;
+        let lbl_input1, lbl_input2;
+        let jumlah_input1, jumlah_input2;
+        // definisikan variabel
+        txt_input1 = document.querySelector("#txt_input1");
+        txt_input2 = document.querySelector("#txt_input2");
+        lbl_input1 = document.querySelector("#lbl_input1");
+        jumlah_input1 =0;
+        
+        // buat event
+        txt_input1.addEventListener("keyup", function(){
+            //hitung jumlah karakter yang diisi
+            jumlah_input1 = this.value.length;
+            //tampilkan hasil di label
+            lbl_input1.innerHTML = jumlah_input1;
+        });
+
+        txt_input2.addEventListener("keyup", function(){
+            //panggil event "txt_input1"
+            txt_input1.keyup;
+        });
+     </script>
+  </body>
+</html>

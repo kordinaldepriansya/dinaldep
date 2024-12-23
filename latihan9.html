@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ternary Operator</title>
+  </head>
+
+  <body>
+    <!-- internal JS -->
+    <script>
+      let nilai;
+      let huruf = "";
+      let hasil = "";
+      let nama = "";
+      nilai = 90;
+
+      //ternary operator
+      // const kondisi = nilai >= 90 && nilai <= 100 ? ([huruf= "A", hasil= "LULUS", nama ="udin"]) : ([huruf="B", hasil= "TIDAKLULUS", nama = "sianu"]);
+
+      const kondisi =
+        nilai >= 90 && nilai <= 100
+          ? ["A", "LULUS", "udin"]
+          : nilai >= 80 && nilai <= 89
+          ? ["B", "TIDAKLULUS", "wati"]
+          : nilai >= 70 && nilai <= 79
+          ? ["c", "LULUS", "iwan"]
+          : nilai >= 60 && nilai <= 69
+          ? ["D", "TIDAK LULUS", "andi"]
+          : nilai >= 0 && nilai <= 59
+          ? ["E", "TIDAK LULUS", "andi"]
+          : ["-", "-", "-"];
+          
+      //tampilkan output
+     // document.write(
+       // `Nilai : ${nilai}<br>Huruf : ${huruf}<br>Hasil : ${hasil}`
+      //);
+      document.write(`Nilai : ${nilai}<br>
+                      Huruf : ${kondisi[0]}<br>
+                      Hasil : ${hasil[2]}`);      
+    </script>
+  </body>
+</html>
